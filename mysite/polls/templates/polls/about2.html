@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "polls/base.html"%}
+{% block content%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>Django Blog - {{title}}</title>
-    {% else %}
-    <title>Django blog</title>
-    {% endif %}
-</head>
+<h1>this should be printed</h1>
 
-<body>
-    <p>yes this should be printed</p>
-</body>
-
-</html>
+{% endblock content%}

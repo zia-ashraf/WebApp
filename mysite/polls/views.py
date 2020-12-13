@@ -67,7 +67,8 @@ post = [  # DUMMY data in list of dictionary
 
 def about(request):
     context = {  # creating a context dictionary!
-        'posts': post
+        'posts': post,
+        'title': 'yeasss'
 
     }
     # the third argument lets us access data from our template.
@@ -75,4 +76,4 @@ def about(request):
 
 
 def about2(request):
-    return render(request, 'polls/about2.html')
+    return render(request, 'polls/about2.html', {'title': 'About'})
