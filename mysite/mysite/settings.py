@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # necessary to be added so that django knows to look their for a templates directory!
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

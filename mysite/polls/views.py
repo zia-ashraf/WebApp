@@ -47,3 +47,32 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+post = [  # DUMMY data in list of dictionary
+    {
+        'author': 'CoreyMS',
+        'title': 'Blog Post 1',
+        'content': 'first oost content',
+        'date_posted': 'December 13,2020'
+    },
+    {
+        'author': 'CoreyMS',
+        'title': 'Blog Post 1',
+        'content': 'first oost content',
+        'date_posted': 'December 13,2020'
+    }
+]
+
+
+def about(request):
+    context = {  # creating a context dictionary!
+        'posts': post
+
+    }
+    # the third argument lets us access data from our template.
+    return render(request, 'polls/about.html', context)
+
+
+def about2(request):
+    return render(request, 'polls/about2.html')
