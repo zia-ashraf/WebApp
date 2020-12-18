@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from .models import Post
 
 from .models import Choice, Question
 # Create your views here.
@@ -67,7 +68,8 @@ post = [  # DUMMY data in list of dictionary
 
 def about(request):
     context = {  # creating a context dictionary!
-        'posts': post,
+        # 'posts': post, not using the dummy data anymore :)
+        'posts': Post.objects.all(),
         'title': 'yeasss'
 
     }
