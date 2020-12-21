@@ -17,8 +17,10 @@ from django.contrib import admin
 # from django.urls import path
 # new below:
 from django.urls import include, path
+from users import views as user_views
 
 urlpatterns = [
+    path('register/', user_views.register, name='register'),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
