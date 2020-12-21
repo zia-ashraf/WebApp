@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # necessary to be added so that django knows to look their for a templates directory!
     'users.apps.UsersConfig',
     'polls.apps.PollsConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # adding this cuz bootstrap2 is outdated
