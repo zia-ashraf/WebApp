@@ -18,9 +18,14 @@ from django.contrib import admin
 # new below:
 from django.urls import include, path
 from users import views as user_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('register/', user_views.register, name='register'),
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
+    path('profile/', user_views.profile, name='profile'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'),
+         name='login'),  # the argument inside 'as_view' tells it where to look for
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('', include('polls.urls')),
+    path('admin/', admin.site.urls, name='addo'),
 ]
