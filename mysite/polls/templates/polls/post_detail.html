@@ -7,6 +7,15 @@
         <div class="article-metadata">
             <a class="mr-2" href="#">{{ object.author }}</a>
             <small class="text-muted">{{ object.date_objected|date:"F d, Y" }}</small>
+            {% if object.author == user %}
+            <div>
+
+                <a class="btn btn-outline-secondary btn-sm mt-1 mb-1"
+                    href="{% url 'polls:post-update' object.id %}">Update</a>
+                <a class="btn btn-outline-danger btn-sm mt-1 mb-1"
+                    href="{% url 'polls:post-delete' object.id %}">Delete</a>
+            </div>
+            {% endif %}
         </div>
         <h2>{{ object.title }}</h2>
         <p class="article-content">{{ object.content }}</p>
