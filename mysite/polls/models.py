@@ -2,6 +2,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 # Create your models here.
@@ -9,7 +10,7 @@ from django.contrib.auth.models import User
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published') 
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.question_text
@@ -38,3 +39,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('polls:post-detail', kwargs={'pk': self.pk})
