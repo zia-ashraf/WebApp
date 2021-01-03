@@ -135,3 +135,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'  # adding this cuz bootstrap2 is outdated
 LOGIN_REDIRECT_URL = 'polls:home-page'
 
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''

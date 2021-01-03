@@ -12,7 +12,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
+    # *args, **kwargs allows us to accept any no. of positional or keyword arguments
     def save(self, *args, **kwargs):
+        # we want to pass those to our save method when we call that on our parent class
         super(Profile, self).save(*args, **kwargs)
 
         img = Image.open(self.image.path)
